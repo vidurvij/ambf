@@ -58,6 +58,6 @@ int main(int argc, char* argv[])
 
     AMBFController ctrl(argc,argv);
     ctrl.sys_run();
-     
+
     return 0;
 }
