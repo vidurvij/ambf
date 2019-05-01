@@ -1,6 +1,7 @@
 class Interface{
 private:
   Robot robo;
+  ambf_msgs::ObjectState;
 public:
   void interface_setup();
   void adjust_setting();
