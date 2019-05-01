@@ -46,19 +46,72 @@
 
 #include "ambf_defines.h"
 
-class AMBFPlanner{
+class AMBFCameraPlanner{
 
 private:
+	bool           homed;
+	bool 		   found_home;
+	tf::Transform  home_pose;
+
+public:
+
+	AMBFCmd command;       // camera command structure
+    AMBFSta state;  	   // camera state structure
+ 	AMBFCmdMode mode;      // camera command mode
+
+    AMBFCameraPlanner();
+    ~AMBFCameraPlanner();
+    bool set_home();
+    bool go_home(bool,int);   		// cp command will be used
+    bool wander_dance(bool, int);  	// cp command will be used
+};
 
 
+//===========================================================================
+class AMBFRavenPlanner{
+
+private:
+	bool homed;
 
 public:
 
 	AMBFCmd command;       // raven command structure
     AMBFSta state;  	   // raven state structure
-    AMBFPlanner();
-    ~AMBFPlanner();
+ 	AMBFCmdMode mode;      // Raven command mode
+
+    AMBFRavenPlanner();
+    ~AMBFRavenPlanner();
+
+    bool fwd_kinematics(int, vector<float>, tf::Transform&);
+    tf::Transform fwd_trans(int, int, vector<float>, vector<float>, vector<float>, vector<float>);
+    bool inv_kinematics(int, tf::Transform&, float, vector<float>&);
+    bool apply_joint_limits(vector<float>& , bool&);
+    bool find_best_solution(vector<float>,vector<vector<float>>,vector<bool>,int&,float&);
+	bool kinematics_test(int);
+	
+    bool go_home(bool,int);   		// jp command will be used
+    bool sine_dance(bool, int);     // jp command will be used
+    bool trace_cube(bool, int);     // cp command will be used
 
 };
+
+
+// Raven Note: 
+// 
+// if(command.type == _jp || command.type == _jw)
+// update command.js
+// 
+// if(command.type == _cp)
+// do inverse kinematics
+// update command.js
+// 
+// if(command.type == _cw)
+// update command.cf
+// update command.ct
+// 
+// Remember to set:
+// command.type 	= _???;
+// command.updated = true;
+// state.updated   = false;
 
 #endif

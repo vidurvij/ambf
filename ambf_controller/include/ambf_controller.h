@@ -51,11 +51,16 @@ class AMBFController{
 private:
 
     mutex _mutex;
+    bool print_menu;
     ros::NodeHandle nh_; 
 
-    vector<ros::Publisher>  raven_pubs;      // raven command publisher
-    vector<ros::Subscriber> raven_subs;      // raven state subscriber
-    vector<AMBFPlanner>     raven_planner;   // raven motion planner
+    vector<ros::Publisher>     raven_pubs;      // raven command publisher
+    vector<ros::Subscriber>    raven_subs;      // raven state subscriber
+    vector<AMBFRavenPlanner>   raven_planner;   // raven motion planner
+
+    vector<ros::Publisher>     camera_pubs;     // camera command publisher
+    vector<ros::Subscriber>    camera_subs;     // camera state subscriber
+    vector<AMBFCameraPlanner>  camera_planner;  // camera motion planner
 
 public:
 
@@ -63,12 +68,20 @@ public:
 
     bool init_sys();
     bool init_ros(int, char**);
-    bool sys_run();
+    void sys_run(); // the system process function
+    void csl_run(); // the console process function
+
     bool raven_first_pb();
     bool raven_command_pb();
-    bool raven_motion_planning();
+    bool camera_command_pb();
     void raven_state_cb(const ros::MessageEvent<ambf_msgs::ObjectState const>&,  const string& );
+    void camera_state_cb(const ros::MessageEvent<ambf_msgs::ObjectState const>&,  const string& );
+
+    bool motion_planning();
     bool reset_command();
+
+    int get_key();
+    bool show_menu();
 
     ~AMBFController();
 };
