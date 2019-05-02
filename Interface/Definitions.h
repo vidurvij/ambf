@@ -20,4 +20,5 @@ truct reference{
   static const string prefix;
   static const command_string;
   static const state_string;
+  static const vector<string> end_effector_name
 }

@@ -54,7 +54,7 @@ void Interface::manual_command(int arm_no, vector<int> joint, vector<bool> mask)
 
 // Subscribing
 
-void Interface::cb(const ros::MessageEvent<ambf::ObjectState> msg, string& name){
+void Interface::cb(const ros::MessageEvent<ambf::ObjectState>& msg, string& name){
   for(auto arm: robo.arms)
     if(arm.part_name == name){
       arm.state = msg.getConstMessage();

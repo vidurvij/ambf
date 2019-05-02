@@ -44,8 +44,8 @@ struct AMBFSta
 
 	vector<float>   jp;        // raven joint space position state
     tf::Transform cp;        // raven catesian space position state
-    tf::Vector3   cf;        // raven cartesian force state     
-    tf::Vector3   ct;        // raven cartesian torque state      
+    tf::Vector3   cf;        // raven cartesian force state
+    tf::Vector3   ct;        // raven cartesian torque state
 };
 
 
@@ -59,7 +59,7 @@ public:
   static const int         raven_iksols;
   static const int 			   loop_rate;
   static const string          sub_append;          // place holder for namescpace strings
-  static const string          pub_append;  
+  static const string          pub_append;
   static const string          raven_append;
   static const string          cameras_append;
   static const vector<string>  arm_append;          // left arm 0 & right arm 1
@@ -80,7 +80,8 @@ public:
   static const vector<vector<float>>   raven_dh_d;
   static const vector<vector<float>>   raven_dh_theta;
   static const vector<float>           raven_ikin_param;
-
+	static const vector<tf::Transform>   			raven_T_B0;
+	static const tf::Transform                 raven_T_CB;
 };
 
 #endif
