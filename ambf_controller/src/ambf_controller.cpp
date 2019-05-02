@@ -56,7 +56,7 @@ AMBFController::AMBFController(int argc, char** argv)
 	init_sys();
 
 	if(!init_ros(argc,argv)) // initialize ros
-	{
+	{	
 		ROS_ERROR("Initialization Error. System Shutting Down.");
 		exit(1);
 	}
@@ -72,10 +72,10 @@ bool AMBFController::init_sys()
 {
 	raven_planner.resize(AMBFDef::raven_arms);
 	camera_planner.resize(AMBFDef::camera_count);
-
+	
 	reset_command();
 	print_menu = true;
-
+	debug_mode = false;
 	return true;
 }
 
@@ -117,7 +117,7 @@ bool AMBFController::init_ros(int argc, char** argv)
 		camera_pubs.push_back(nh_.advertise<ambf_msgs::ObjectCmd>(topic,1));
 	}
 
-	return true;
+	return true;	
 }
 
 
@@ -144,11 +144,11 @@ void AMBFController::raven_state_cb(const ros::MessageEvent<ambf_msgs::ObjectSta
 		if(msg->joint_positions.size() == AMBFDef::raven_joints)
 	   	{
 		  	for(int j = 0; j< AMBFDef::raven_joints; j++)
-		  		raven_planner[i].state.jp[j] = msg->joint_positions[j];
+		  		raven_planner[i].state.jp[j] = msg->joint_positions[j]; 
 
 		  	// set the carteisian end effector pose
-		  	raven_planner[i].fwd_kinematics(i, raven_planner[i].state.jp, raven_planner[i].state.cp);
-		  	raven_planner[i].state.updated = true;
+		  	raven_planner[i].fwd_kinematics(i, raven_planner[i].state.jp, raven_planner[i].state.cp);  
+		  	raven_planner[i].state.updated = true;	
 	   	}
 	   	else if(msg->joint_positions.size() == 0)
 	   	{
@@ -160,7 +160,7 @@ void AMBFController::raven_state_cb(const ros::MessageEvent<ambf_msgs::ObjectSta
 	   	}
   	}
   }
-}
+} 
 
 
 
@@ -193,11 +193,11 @@ void AMBFController::camera_state_cb(const ros::MessageEvent<ambf_msgs::ObjectSt
 		   	if(!found_home[i])
 		   		found_home[i] = camera_planner[i].set_home();
 
-		   	camera_planner[i].state.updated = true;
+		   	camera_planner[i].state.updated = true;	
 	  	}
   	}
   }
-}
+} 
 
 
 /**
@@ -212,29 +212,37 @@ bool AMBFController::motion_planning()
 	// raven motion planning
 	for(int i=0; i<AMBFDef::raven_arms; i++)
 	{
-		if(raven_planner[i].state.updated && raven_planner[i].command.type != _null)
+		if(raven_planner[i].state.updated)
 		{
-			switch(raven_planner[i].mode)
+			if(raven_planner[i].command.type != _null)
 			{
-				case AMBFCmdMode::freefall:	// do nothing
-					break;
+				switch(raven_planner[i].mode)
+				{
+					case AMBFCmdMode::freefall:	// do nothing
+						break;
 
-				case AMBFCmdMode::homing:
-					raven_planner[i].go_home(false,i);
-					break;
+					case AMBFCmdMode::homing:
+						raven_planner[i].go_home(false,i);
+						break;
 
-				case AMBFCmdMode::dancing:
-					raven_planner[i].sine_dance(false,i);
-					break;
+					case AMBFCmdMode::dancing:
+						raven_planner[i].sine_dance(false,i);
+						break;
 
-				case AMBFCmdMode::cube_tracing:
-					raven_planner[i].trace_cube(false,i);
-					break;
+					case AMBFCmdMode::cube_tracing:
+						raven_planner[i].trace_cube(false,i);
+						break;
+				}
 			}
-			raven_planner[i].kinematics_test(i);
-		}
+			
+			// show kinematics status
+			if(debug_mode)
+			{
+				raven_planner[i].kinematics_show(i);
+			}
+		}		
 	}
-
+	
 	// camera motion planning
 	for(int i=0; i<AMBFDef::camera_count; i++)
 	{
@@ -253,7 +261,7 @@ bool AMBFController::motion_planning()
 					camera_planner[i].wander_dance(false,i);
 					break;
 			}
-		}
+		}		
 	}
 
 	return true;
@@ -267,7 +275,7 @@ bool AMBFController::motion_planning()
 void AMBFController::sys_run()
 {
 	bool check = ros::ok();
-
+	
 	ros::Rate loop_rate(AMBFDef::loop_rate);
     while(check){
 
@@ -297,7 +305,7 @@ void AMBFController::csl_run()
 
 	int key;
 	bool check = ros::ok();
-
+	
 	ros::Rate loop_rate(AMBFDef::loop_rate);
     while(check){
 
@@ -319,7 +327,7 @@ void AMBFController::csl_run()
 					if(i == 0) ROS_INFO("1: Entered Raven homing mode. Both arms moving to home.");
 					raven_planner[i].mode = AMBFCmdMode::homing;
 					raven_planner[i].command.type = _jp;
-					raven_planner[i].go_home(true,i);
+					raven_planner[i].go_home(true,i);				
 					print_menu = true;
 					break;
 
@@ -373,6 +381,13 @@ void AMBFController::csl_run()
 			}
 		}
 
+		if(key == 'x' || key == 'X')
+		{
+			debug_mode = !debug_mode;
+			ROS_INFO("x: Entered Toggle console debug mode. Setting changed.");
+			print_menu = true;
+		}
+
         ros::spinOnce();
         loop_rate.sleep();
 
@@ -397,7 +412,7 @@ bool AMBFController::raven_first_pb()
 		msg.publish_children_names  = raven_planner[i].command.cn_flag;
 		msg.publish_joint_names	    = raven_planner[i].command.jn_flag;
 	    msg.publish_joint_positions = raven_planner[i].command.jp_flag;
-		raven_pubs[i].publish(msg);
+		raven_pubs[i].publish(msg);	
 	}
 	return true;
 }
@@ -409,9 +424,9 @@ bool AMBFController::raven_first_pb()
  * @return     success
  */
 bool AMBFController::raven_command_pb()
-{
+{ 
 	lock_guard<mutex> _mutexlg(_mutex);
-
+	
 	/*
 	This is the ObjectCmd content:
 
@@ -420,7 +435,7 @@ bool AMBFController::raven_command_pb()
 	geometry_msgs/Pose pose
 	geometry_msgs/Wrench wrench
 	float32[] joint_cmds
-	bool[] position_controller_mask
+	bool[] position_controller_mask 
 	*/
 
 	float sleep_time =  1.0/AMBFDef::loop_rate;
@@ -462,7 +477,7 @@ bool AMBFController::raven_command_pb()
 			raven_planner[i].command.updated = false;
 		}
 	}
-
+	
     return true;
 }
 
@@ -474,9 +489,9 @@ bool AMBFController::raven_command_pb()
  * @return     success
  */
 bool AMBFController::camera_command_pb()
-{
+{ 
 	lock_guard<mutex> _mutexlg(_mutex);
-
+	
 	/*
 	This is the ObjectCmd content:
 
@@ -485,7 +500,7 @@ bool AMBFController::camera_command_pb()
 	geometry_msgs/Pose pose
 	geometry_msgs/Wrench wrench
 	float32[] joint_cmds
-	bool[] position_controller_mask
+	bool[] position_controller_mask 
 	*/
 
 	float sleep_time =  1.0/AMBFDef::loop_rate;
@@ -512,7 +527,7 @@ bool AMBFController::camera_command_pb()
 			camera_planner[i].command.updated = false;
 		}
 	}
-
+	
     return true;
 }
 
@@ -531,8 +546,8 @@ bool AMBFController::reset_command()
     for(int i=0; i<AMBFDef::raven_arms; i++)
     {
 	 	raven_planner[i].command.js = AMBFDef::zero_joints;   	// raven joint space command
-	    raven_planner[i].command.cf = AMBFDef::zero_vec;         // raven cartesian force command
-	    raven_planner[i].command.ct = AMBFDef::zero_vec;         // raven cartesian torque command
+	    raven_planner[i].command.cf = AMBFDef::zero_vec;         // raven cartesian force command      
+	    raven_planner[i].command.ct = AMBFDef::zero_vec;         // raven cartesian torque command   
 
 	    raven_planner[i].command.cn_flag = false;		// raven state: children name flag
 	    raven_planner[i].command.jn_flag = false;		// raven state: joint name flag
@@ -563,13 +578,13 @@ AMBFController::~AMBFController()
  *
  * @return     The key.
  */
-int AMBFController::get_key()
+int AMBFController::get_key() 
 {
     	int character;
     	struct termios orig_term_attr;
     	struct termios new_term_attr;
 
-    	// set the terminal to raw mode
+    	// set the terminal to raw mode 
     	tcgetattr(fileno(stdin), &orig_term_attr);
     	memcpy(&new_term_attr, &orig_term_attr, sizeof(struct termios));
     	new_term_attr.c_lflag &= ~(ECHO|ICANON);
@@ -577,11 +592,11 @@ int AMBFController::get_key()
     	new_term_attr.c_cc[VMIN] = 0;
     	tcsetattr(fileno(stdin), TCSANOW, &new_term_attr);
 
-    	// read a character from the stdin stream without blocking
-    	//   returns EOF (-1) if no character is available
+    	// read a character from the stdin stream without blocking 
+    	//   returns EOF (-1) if no character is available 
     	character = fgetc(stdin);
 
-   	// restore the original terminal attributes
+   	// restore the original terminal attributes 
     	tcsetattr(fileno(stdin), TCSANOW, &orig_term_attr);
 
     	return character;
@@ -619,7 +634,7 @@ bool AMBFController::show_menu()
 	}
 	if(last_cam_mode != cam_mode)
 		print_menu = true;
-
+	
 	last_cam_mode = cam_mode;
 
 	// print the user menu
@@ -647,7 +662,7 @@ bool AMBFController::show_menu()
 		ROS_INFO("%s3: Raven cube_tracing mode",s.c_str());
 
 		// for camera
-		if(cam_mode == AMBFCmdMode::freefall) 	s = s_true;
+		if(cam_mode == AMBFCmdMode::freefall) 	s = s_true;		
 		else									s = s_false;
 		ROS_INFO("%sa: Camera static mode",s.c_str());
 
@@ -658,6 +673,10 @@ bool AMBFController::show_menu()
 		if(cam_mode == AMBFCmdMode::homing) 	s = s_true;
 		else									s = s_false;
 		ROS_INFO("%sc: Camera homing mode",s.c_str());
+
+		if(debug_mode)							s = s_true;
+		else									s = s_false;
+		ROS_INFO("%sx: Toggle console debug mode",s.c_str());
 
 		ROS_INFO("-----------------------------------------------------\n\n");
 
