@@ -77,6 +77,7 @@ public:
 
 	AMBFCmd command;       // raven command structure
     AMBFSta state;  	   // raven state structure
+		AMBFSta end_effector;
  	AMBFCmdMode mode;      // Raven command mode
 
     AMBFRavenPlanner();
@@ -98,19 +99,19 @@ public:
 };
 
 
-// Raven Note: 
-// 
+// Raven Note:
+//
 // if(command.type == _jp || command.type == _jw)
 // update command.js
-// 
+//
 // if(command.type == _cp)
 // do inverse kinematics
 // update command.js
-// 
+//
 // if(command.type == _cw)
 // update command.cf
 // update command.ct
-// 
+//
 // Remember to set:
 // command.type 	= _???;
 // command.updated = true;

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: dvrk_arm
+Description: Description of dvrk_arm
+Version: 0.0.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -ldvrk_arm
+Requires: 

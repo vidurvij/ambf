@@ -1,0 +1,6 @@
+set(ambf_comm_SETUP_PY_VERSION "0.0.0")
+set(ambf_comm_SETUP_PY_SCRIPTS "")
+set(ambf_comm_SETUP_PY_PACKAGES "ambf_comm;ambf_env;ambf_client;ambf_object;ambf_world;ambf_world")
+set(ambf_comm_SETUP_PY_PACKAGE_DIRS "scripts/ambf_comm;scripts/ambf_env;scripts/ambf_client;scripts/ambf_object;scripts/ambf_world;scripts/ambf_world")
+set(ambf_comm_SETUP_PY_MODULES "")
+set(ambf_comm_SETUP_PY_MODULE_DIRS "")

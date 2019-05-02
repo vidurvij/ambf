@@ -1,0 +1,8 @@
+prefix=/home/vidur/Desktop/ambf/bin/devel
+
+Name: dvrk_arm
+Description: Description of dvrk_arm
+Version: 0.0.0
+Cflags: -I/home/vidur/Desktop/ambf/ambf_ros_modules/dvrk_arm/include
+Libs: -L/home/vidur/Desktop/ambf/bin/devel/lib -ldvrk_arm
+Requires: 
