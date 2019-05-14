@@ -308,7 +308,15 @@ set (AMBF_SOURCE_DIR ${PROJECT_SOURCE_DIR})
 add_subdirectory (${PROJECT_SOURCE_DIR}/ambf_simulator)
 
 # AMBF Controller
-add_subdirectory (${PROJECT_SOURCE_DIR}/ambf_controller)
+if (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+  find_package(catkin COMPONENTS
+    roscpp
+  )
+  if (${catkin_FOUND})
+    add_subdirectory (${PROJECT_SOURCE_DIR}/ambf_controller)
+  endif()
+endif()
+
 
 # AMBF Interface
 add_subdirectory (${PROJECT_SOURCE_DIR}/Interface)

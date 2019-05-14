@@ -8,7 +8,7 @@
 printf "\n Start Compiling the AMBF Code...\n"
 
 
-cd ~/ambf/build
+cd ./build
 cmake ..
 make
 source ./devel/setup.bash
@@ -17,14 +17,16 @@ printf "\n AMBF Code Finished Building!\n"
 
 
 printf "\n To run the code, make sure an external roscore is running.\n"
+printf " To run the AMBF Controller, change the world settings in the \n"
+printf " launch.yaml file to enable raven_world.yaml.\n"
 printf " Press any key to continue (ctrl-C to quit)"
 read -n 1 -s -r -p "..."
 
 
 
 printf "\n Run the AMBF Simulator.  (On a new terminal)"
-cd ~/ambf/bin/lin-x86_64/
-gnome-terminal -e "./ambf_simulator"
+cd ../bin/lin-x86_64/
+gnome-terminal -e "./ambf_simulator -l 3"
 
 
 
