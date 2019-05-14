@@ -10,6 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../AMBFConfig.cmake.in"
   "../AMBFConfigVersion.cmake.in"
   "../CMakeLists.txt"
+  "../Interface/CMakeLists.txt"
   "../ambf_controller/CMakeLists.txt"
   "../ambf_ros_modules/CMakeLists.txt"
   "../ambf_ros_modules/ambf_comm/CMakeLists.txt"
@@ -266,6 +267,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "external/GLFW/CMakeFiles/CMakeDirectoryInformation.cmake"
   "ambf_simulator/CMakeFiles/CMakeDirectoryInformation.cmake"
   "ambf_controller/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Interface/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -350,4 +352,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "external/GLFW/CMakeFiles/glfw.dir/DependInfo.cmake"
   "ambf_simulator/CMakeFiles/ambf_simulator.dir/DependInfo.cmake"
   "ambf_controller/CMakeFiles/ambf_controller.dir/DependInfo.cmake"
+  "Interface/CMakeFiles/Interface.dir/DependInfo.cmake"
   )

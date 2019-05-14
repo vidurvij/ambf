@@ -126,6 +126,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/vidur/Desktop/ambf/bin/external/GLFW/cmake_install.cmake")
   include("/home/vidur/Desktop/ambf/bin/ambf_simulator/cmake_install.cmake")
   include("/home/vidur/Desktop/ambf/bin/ambf_controller/cmake_install.cmake")
+  include("/home/vidur/Desktop/ambf/bin/Interface/cmake_install.cmake")
 
 endif()
 

@@ -310,6 +310,9 @@ add_subdirectory (${PROJECT_SOURCE_DIR}/ambf_simulator)
 # AMBF Controller
 add_subdirectory (${PROJECT_SOURCE_DIR}/ambf_controller)
 
+# AMBF Interface
+add_subdirectory (${PROJECT_SOURCE_DIR}/Interface)
+
 #
 # export package
 #
