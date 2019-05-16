@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../ambf_controller/include/ambf_controller.h
+../ambf_controller/raven2/include/ambf_controller.h
 ambf_motion_planner.h
-../ambf_controller/include/ambf_motion_planner.h
+../ambf_controller/raven2/include/ambf_motion_planner.h
 
-../ambf_controller/include/ambf_defines.h
+../ambf_controller/raven2/include/ambf_defines.h
 chai3d.h
-../ambf_controller/include/chai3d.h
+../ambf_controller/raven2/include/chai3d.h
 ambf.h
-../ambf_controller/include/ambf.h
+../ambf_controller/raven2/include/ambf.h
 GLFW/glfw3.h
 -
 boost/program_options.hpp
@@ -28,11 +28,11 @@ map
 termios.h
 -
 CBullet.h
-../ambf_controller/include/CBullet.h
+../ambf_controller/raven2/include/CBullet.h
 
-../ambf_controller/include/ambf_motion_planner.h
+../ambf_controller/raven2/include/ambf_motion_planner.h
 ambf_defines.h
-../ambf_controller/include/ambf_defines.h
+../ambf_controller/raven2/include/ambf_defines.h
 
 ../ambf_framework/afFramework.h
 afSoftMultiMesh.h
@@ -3710,21 +3710,21 @@ OpenGL/glu.h
 GL/glu.h
 -
 
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_controller.cpp
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_controller.cpp
 ambf_controller.h
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_controller.h
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_controller.h
 
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_defines.cpp
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_defines.cpp
 ambf_defines.h
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_defines.h
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_defines.h
 
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_motion_planner.cpp
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_motion_planner.cpp
 ambf_motion_planner.h
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_motion_planner.h
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_motion_planner.h
 
-/home/vidur/Desktop/ambf/ambf_controller/src/main.cpp
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/main.cpp
 ambf_controller.h
-/home/vidur/Desktop/ambf/ambf_controller/src/ambf_controller.h
+/home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_controller.h
 
 /opt/ros/melodic/include/boost_161_condition_variable.h
 boost/thread/detail/platform.hpp

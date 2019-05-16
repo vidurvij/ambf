@@ -11,7 +11,7 @@ const vector<string> reference::base_names = {"base_link_L", "base_link_R"};
 const string reference::prefix = "/ambf/env/";
 const string reference::command_string = "Command";
 const string reference::state_string = "State";
-const vector<string> reference::end_effector_name = {"", ""};
+const vector<string> reference::end_effector_name = {"wrist_L", "wrist_R"};
 
 const vector<vector<float>>   reference::raven_joint_limit    = {{         0,    M_PI*1/4,       -0.17,  -M_PI*2,      -2,       -2,        -2},
                                                                {  M_PI*1/2,    M_PI*3/4,        0.10,   M_PI*2,       2,        2,         2}};  // TODO: finalize this

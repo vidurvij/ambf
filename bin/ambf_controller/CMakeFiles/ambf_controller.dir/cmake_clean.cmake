@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o"
-  "CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o"
-  "CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o"
-  "CMakeFiles/ambf_controller.dir/src/main.cpp.o"
+  "CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o"
+  "CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o"
+  "CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o"
+  "CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o"
   "../lin-x86_64/ambf_controller.pdb"
   "../lin-x86_64/ambf_controller"
 )

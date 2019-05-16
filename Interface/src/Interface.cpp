@@ -27,15 +27,13 @@ void Interface::setup(){
     }
     for (string name: reference::end_effector_name){
       string topic = reference::prefix + reference::robot_name + '/' + name + '/';
+      cout<<topic + reference::command_string;
       ros::Publisher p = nh_.advertise<ambf_msgs::ObjectCmd>(topic + reference::command_string, 1);
       ros::Subscriber s = nh_.subscribe<ambf_msgs::ObjectState>(topic + reference::state_string, 1, boost::bind(&Interface::endpb, this,_1, name)); //Callback a placeholder. To be improved
-      robo.arms.emplace_back(p, s, name);
+      robo.end_effector.emplace_back(p, s, name);
     }
   }
-  // exit(0);
   adjust_setting();
-  // cout<<"HIT";
-  // exit(0);
 }
 
 void Interface::adjust_setting(){
@@ -47,7 +45,7 @@ void Interface::adjust_setting(){
   msg1.publish_joint_positions = true;
   // ros::Rate r(1000000);
   for(int i = 0; i<reference::arms; i++)
-    {robo.arms[i].pub.publish(msg1);}
+    {robo.arms[i].pub.publish(msg1);robo.end_effector[i].pub.publish(msg1);}
   // cout<<"HIT";
   // exit(0);
 }
@@ -104,10 +102,14 @@ void Interface::pb(const ros::MessageEvent<ambf_msgs::ObjectState>& msg, string&
 }
 
 void Interface::endpb(const ros::MessageEvent<ambf_msgs::ObjectState>& msg, string& name){
+  // cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
   for(auto &end: robo.end_effector)
+    {
+    ROS_INFO("name ",name,end.part_name);
     if(end.part_name == name){
       end.state = *(msg.getMessage());
-    }
+    }}
+
 }
 
 void Interface::publish_process(){
@@ -121,12 +123,28 @@ void Interface::publish_process(){
         cout<<j<<" ";
       cout<<"]"<<endl;
     }
-    tf::Trasnform end_pose;
+    vector<tf::Transform> end_status;
+    // ROS_INFO("name ","yolo");
+    robo.end_positions(end_status);
+    tf::Transform end_pose;
     kine.fwd_kinematics(0,display[0], end_pose);
     tf::Vector3 	cp_pos = end_pose.getOrigin();
   	tf::Quaternion 	cp_ori = end_pose.getRotation();
-    
-    cout<<"Sim_step : "<<robo.arms[1].state.sim_step<<endl;
+    vector<float> inv_result = {0,0,0,0,0,0,0};
+    cout<<"Test: "<<robo.end_effector[0].state.sim_step<<endl;
+    cout<<"Foward Kinematics "<<"posn: "<<cp_pos.x()<<" "<<cp_pos.y()<<" "<<cp_pos.z()<<" Orien: "<<cp_ori.x()<<" "<<cp_ori.y()<<" "<<cp_ori.z()<<" "<<cp_ori.w()<<endl;
+    for(auto end: end_status)
+      {cp_pos = end.getOrigin();
+      cp_ori = end.getRotation();
+      cout<<"Actual Location "<<"posn: "<<cp_pos.x()<<" "<<cp_pos.y()<<" "<<cp_pos.z()<<" Orien: "<<cp_ori.x()<<" "<<cp_ori.y()<<" "<<cp_ori.z()<<" "<<cp_ori.w()<<endl;}
+    if (display[0].size() > 0)
+    kine.inv_kinematics(display[0], 0 , end_pose, display[0][5] + display[0][6],inv_result);
+    // cout<<"\nhiit";
+    cout<<"Inv_results: [";
+    for(float i: inv_result)
+      cout<<i<<" ";
+    cout<<"]"<<endl;
+    cout<<"Sim_step : "<<robo.arms[1].state.sim_step<<"\n\n";
     ros::spinOnce();
     loop_rate.sleep();
   }

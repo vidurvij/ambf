@@ -57,116 +57,116 @@ include ambf_controller/CMakeFiles/ambf_controller.dir/progress.make
 # Include the compile flags for this target's objects.
 include ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o: ../ambf_controller/src/ambf_motion_planner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/src/ambf_motion_planner.cpp
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o: ../ambf_controller/raven2/src/ambf_motion_planner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_motion_planner.cpp
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.i"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/src/ambf_motion_planner.cpp > CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.i
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.i"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_motion_planner.cpp > CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.i
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.s"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/src/ambf_motion_planner.cpp -o CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.s
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.s"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_motion_planner.cpp -o CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.s
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.requires:
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.requires:
 
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.requires
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.requires
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.requires
-	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.provides.build
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.provides
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.requires
+	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.provides.build
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.provides
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o
-
-
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o: ../ambf_controller/src/ambf_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/src/ambf_controller.cpp
-
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.i"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/src/ambf_controller.cpp > CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.i
-
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.s"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/src/ambf_controller.cpp -o CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.s
-
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.requires:
-
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.requires
-
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.requires
-	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.provides.build
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.provides
-
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o
 
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o: ../ambf_controller/src/ambf_defines.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/src/ambf_defines.cpp
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o: ../ambf_controller/raven2/src/ambf_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_controller.cpp
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.i"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/src/ambf_defines.cpp > CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.i
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.i"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_controller.cpp > CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.i
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.s"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/src/ambf_defines.cpp -o CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.s
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.s"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_controller.cpp -o CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.s
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.requires:
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.requires:
 
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.requires
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.requires
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.requires
-	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.provides.build
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.provides
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.requires
+	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.provides.build
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.provides
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o
 
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o: ../ambf_controller/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/src/main.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/src/main.cpp
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o: ../ambf_controller/raven2/src/ambf_defines.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_defines.cpp
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/src/main.cpp.i"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/src/main.cpp > CMakeFiles/ambf_controller.dir/src/main.cpp.i
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.i"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_defines.cpp > CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.i
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/src/main.cpp.s"
-	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/src/main.cpp -o CMakeFiles/ambf_controller.dir/src/main.cpp.s
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.s"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/raven2/src/ambf_defines.cpp -o CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.s
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.requires:
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.requires:
 
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.requires
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.requires
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.requires
-	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.provides.build
-.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.provides
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.requires
+	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.provides.build
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.provides
 
-ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o
+
+
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o: ambf_controller/CMakeFiles/ambf_controller.dir/flags.make
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o: ../ambf_controller/raven2/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o -c /home/vidur/Desktop/ambf/ambf_controller/raven2/src/main.cpp
+
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.i"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/ambf_controller/raven2/src/main.cpp > CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.i
+
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.s"
+	cd /home/vidur/Desktop/ambf/bin/ambf_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/ambf_controller/raven2/src/main.cpp -o CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.s
+
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.requires:
+
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.requires
+
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.provides: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.requires
+	$(MAKE) -f ambf_controller/CMakeFiles/ambf_controller.dir/build.make ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.provides.build
+.PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.provides
+
+ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.provides.build: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o
 
 
 # Object files for target ambf_controller
 ambf_controller_OBJECTS = \
-"CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o" \
-"CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o" \
-"CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o" \
-"CMakeFiles/ambf_controller.dir/src/main.cpp.o"
+"CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o" \
+"CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o" \
+"CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o" \
+"CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o"
 
 # External object files for target ambf_controller
 ambf_controller_EXTERNAL_OBJECTS =
 
-lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o
-lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o
-lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o
-lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o
+lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o
+lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o
+lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o
+lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o
 lin-x86_64/ambf_controller: ambf_controller/CMakeFiles/ambf_controller.dir/build.make
 lin-x86_64/ambf_controller: libambf_framework.a
 lin-x86_64/ambf_controller: /usr/lib/x86_64-linux-gnu/libGL.so
@@ -230,10 +230,10 @@ ambf_controller/CMakeFiles/ambf_controller.dir/build: lin-x86_64/ambf_controller
 
 .PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/build
 
-ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_motion_planner.cpp.o.requires
-ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_controller.cpp.o.requires
-ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/src/ambf_defines.cpp.o.requires
-ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/src/main.cpp.o.requires
+ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_motion_planner.cpp.o.requires
+ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_controller.cpp.o.requires
+ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/ambf_defines.cpp.o.requires
+ambf_controller/CMakeFiles/ambf_controller.dir/requires: ambf_controller/CMakeFiles/ambf_controller.dir/raven2/src/main.cpp.o.requires
 
 .PHONY : ambf_controller/CMakeFiles/ambf_controller.dir/requires
 

@@ -204,7 +204,7 @@ public:
 	 *
 	 * @return     success
 	 */
-	bool inv_kinematics(vector<float> &I, int arm, tf::Transform& input_cp, float input_gangle, vector<float>& output_jp)
+	bool inv_kinematics(vector<float>& I, int arm, tf::Transform& input_cp, float input_gangle, vector<float>& output_jp)
 	{
 		bool success = false;
 
@@ -217,7 +217,6 @@ public:
 		vector<float> dh_theta(6);
 		vector<float> dh_a(6);
 		vector<float> dh_d(6);
-
 		for(int i=0; i<reference::children_size-1;i++)
 		{
 			dh_alpha[i] = reference::raven_dh_alpha[arm][i];
@@ -225,13 +224,11 @@ public:
 			dh_a[i] = reference::raven_dh_a[arm][i];
 			dh_d[i] = reference::raven_dh_d[arm][i];
 		}
-
 		for (int i = 0; i < reference::raven_iksols; i++)
 		{
 			iksol[i] = reference::zero_joints;
 			ikcheck[i] = true;
 		}
-
 		//  Step 1, Compute P5
 		tf::Transform T60 = xf.inverse();
 		tf::Vector3 p6rcm = T60.getOrigin();
@@ -263,7 +260,6 @@ public:
 			iksol[4 * i + 0][2] = iksol[4 * i + 1][2] = -reference::raven_ikin_param[4] - insertion;
 			iksol[4 * i + 2][2]= iksol[4 * i + 3][2] = -reference::raven_ikin_param[4] + insertion;
 		}
-
 		//  Step 3, calculate theta 2
 		for (int i = 0; i < reference::raven_iksols; i += 2)  // p05 solutions
 		{

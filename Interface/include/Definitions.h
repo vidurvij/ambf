@@ -65,6 +65,11 @@ struct Robot{
     for(robot_part arm : arms)
       result.push_back(arm.state.joint_positions);
   }
+  void end_positions(vector<tf::Transform >& result){
+    for(robot_part effector : end_effector)
+      result.push_back(tf::Transform(tf::Quaternion(effector.state.pose.orientation.x, effector.state.pose.orientation.y,effector.state.pose.orientation.z, effector.state.pose.orientation.w), tf::Vector3(effector.state.pose.position.x,effector.state.pose.position.y,effector.state.pose.position.z)));
+    // cout<<"Test:"<<end_effector[0].state.sim_step<<endl;
+  }
   // vector<vector<robot_part>> children;  To be implemented
 };
 

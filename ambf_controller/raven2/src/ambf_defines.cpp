@@ -3,25 +3,19 @@
     Software License Agreement (BSD License)
     Copyright (c) 2019, AMBF
     (www.aimlab.wpi.edu)
-
     All rights reserved.
-
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions
     are met:
-
     * Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
-
     * Redistributions in binary form must reproduce the above
     copyright notice, this list of conditions and the following
     disclaimer in the documentation and/or other materials provided
     with the distribution.
-
     * Neither the name of authors nor the names of its contributors may
     be used to endorse or promote products derived from this software
     without specific prior written permission.
-
     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
     "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
     LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
@@ -34,7 +28,6 @@
     LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
     ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
     POSSIBILITY OF SUCH DAMAGE.
-
     \author:    Melody Su
     \date:      April, 2019
     \version:   $
@@ -55,17 +48,10 @@ const float           AMBFDef::safe_pos_incr          = 0.5 / AMBFDef::loop_rate
 // The loop rate of the AMBF python client: 1000 Hz
 // The loop rate of the Raven source code:  1000 Hz
 
-<<<<<<< HEAD:ambf_controller/src/ambf_defines.cpp
+const string          AMBFDef::env_append             = "/ambf/env/";
 const string          AMBFDef::sub_append             = "/State";                           // place holder for namescpace strings
 const string          AMBFDef::pub_append             = "/Command";
-const string          AMBFDef::raven_append           = "/ambf/env/raven_2";
-const string          AMBFDef::cameras_append         = "/ambf/env/cameras";
-=======
-const string          AMBFDef::env_append             = "/ambf/env/";                                              
-const string          AMBFDef::sub_append             = "/State";                           // place holder for namescpace strings
-const string          AMBFDef::pub_append             = "/Command";  
 const string          AMBFDef::raven_append           = "raven_2";
->>>>>>> upstream/master:ambf_controller/raven2/src/ambf_defines.cpp
 const vector<string>  AMBFDef::arm_append             = {"/base_link_L", "/base_link_R"};   // left arm 0 & right arm 1
 const vector<string>  AMBFDef::cam_append             = {"cam_1", "cam_2", "cam_3"};        // each camera name
 const vector<string>  AMBFDef::axes_name              = {"X", "Y", "Z"};
@@ -75,7 +61,7 @@ const tf::Vector3             AMBFDef::zero_vec             = tf::Vector3(0,0,0)
 const vector<float>           AMBFDef::zero_joints          = {          0,           0,           0,        0,       0,        0,         0};
 const vector<float>           AMBFDef::max_joints           = {       M_PI,        M_PI,        0.10,     M_PI,       2, M_PI*3/4,  M_PI*3/4};
 const vector<float>           AMBFDef::min_joints           = {      -M_PI,       -M_PI,       -0.17,    -M_PI,      -2,        0,         0};
-const vector<float>           AMBFDef::home_joints          = {   M_PI*1/3,    M_PI*3/5,       -0.09, M_PI*3/4,       0,   M_PI/6,    M_PI/6}; 
+const vector<float>           AMBFDef::home_joints          = {   M_PI*1/3,    M_PI*3/5,       -0.09, M_PI*3/4,       0,   M_PI/6,    M_PI/6};
 const vector<float>           AMBFDef::dance_scale_joints   = {        0.3,         0.3,        0.06,      0.3,     1.2,   M_PI/6,    M_PI/6};
 const vector<unsigned char>   AMBFDef::true_joints          = {          1,           1,           1,        1,       1,        1,         1};
 const vector<unsigned char>   AMBFDef::false_joints         = {          0,           0,           0,        0,       0,        0,         0};
