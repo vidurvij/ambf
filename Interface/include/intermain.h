@@ -20,6 +20,7 @@ public:
   void endpb(const ros::MessageEvent<ambf_msgs::ObjectState>&, string&);
   void setup();
   void publish_process();
+  void starting();
   bool init_ros(int , char**);
   Interface(int , char**);
   // Interface()

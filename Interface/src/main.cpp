@@ -16,9 +16,9 @@
 
 int main(int argc, char* argv[]){
   // ros::init(argc, argv, "my_node_nam/e");
-  ros::init(argc,argv,"FridayisAlive");
+
   Interface I(argc, argv);
-  thread test(&Interface::publish_process, &I);
-  test.join();
+
+  
   return 0;
 }
