@@ -11,6 +11,8 @@
 #include <thread>
 #include <map>
 #include <termios.h>
+#include <random>
+
 //---------------------------------------------------------------------------
 using namespace ambf;
 using namespace chai3d;
@@ -44,10 +46,13 @@ struct reference{
   static const vector<float>           raven_ikin_param;
   static const vector<unsigned char>   true_joints;
   static const vector<unsigned char>   false_joints;
-  static const vector<tf::Transform>   			raven_T_B0;
-  static const tf::Transform                 raven_T_CB;
-  static const vector<float>                  home_joints;
-  static const int                       AMBF_rate;
+  static const vector<tf::Transform>   raven_T_B0;
+  static const tf::Transform           raven_T_CB;
+  static const vector<float>           home_joints;
+  static const int                     AMBF_rate;
+
+  static const int EPISODES;
+  static const int T_steps;
 };
 
 struct robot_part{
@@ -57,10 +62,11 @@ struct robot_part{
   ambf_msgs::ObjectState state;
   CTRL_mode mode;
   vector<float> delta;
-  ambf_msgs::ObjectCmd command
+  ambf_msgs::ObjectCmd command;
   bool cmd_updated;
+  bool state_updated;
   robot_part(){state_updated = false; delta = {0,0,0,0,0,0,0};}
-  robot_part(ros::Publisher p, ros::Subscriber s, string name): pub(p), subs(s), part_name(name){state_updated = false;}
+  robot_part(ros::Publisher p, ros::Subscriber s, string name): pub(p), subs(s), part_name(name){state_updated = false; command.joint_cmds.resize(7); command.publish_joint_positions = true;}
 
 };
 

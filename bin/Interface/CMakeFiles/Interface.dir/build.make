@@ -129,11 +129,36 @@ Interface/CMakeFiles/Interface.dir/src/main.cpp.o.provides: Interface/CMakeFiles
 Interface/CMakeFiles/Interface.dir/src/main.cpp.o.provides.build: Interface/CMakeFiles/Interface.dir/src/main.cpp.o
 
 
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o: Interface/CMakeFiles/Interface.dir/flags.make
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o: ../Interface/src/Reinforcement_module.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o"
+	cd /home/vidur/Desktop/ambf/bin/Interface && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o -c /home/vidur/Desktop/ambf/Interface/src/Reinforcement_module.cpp
+
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.i"
+	cd /home/vidur/Desktop/ambf/bin/Interface && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vidur/Desktop/ambf/Interface/src/Reinforcement_module.cpp > CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.i
+
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.s"
+	cd /home/vidur/Desktop/ambf/bin/Interface && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vidur/Desktop/ambf/Interface/src/Reinforcement_module.cpp -o CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.s
+
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.requires:
+
+.PHONY : Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.requires
+
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.provides: Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.requires
+	$(MAKE) -f Interface/CMakeFiles/Interface.dir/build.make Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.provides.build
+.PHONY : Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.provides
+
+Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.provides.build: Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o
+
+
 # Object files for target Interface
 Interface_OBJECTS = \
 "CMakeFiles/Interface.dir/src/Interface.cpp.o" \
 "CMakeFiles/Interface.dir/src/Definitions.cpp.o" \
-"CMakeFiles/Interface.dir/src/main.cpp.o"
+"CMakeFiles/Interface.dir/src/main.cpp.o" \
+"CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o"
 
 # External object files for target Interface
 Interface_EXTERNAL_OBJECTS =
@@ -141,6 +166,7 @@ Interface_EXTERNAL_OBJECTS =
 lin-x86_64/Interface: Interface/CMakeFiles/Interface.dir/src/Interface.cpp.o
 lin-x86_64/Interface: Interface/CMakeFiles/Interface.dir/src/Definitions.cpp.o
 lin-x86_64/Interface: Interface/CMakeFiles/Interface.dir/src/main.cpp.o
+lin-x86_64/Interface: Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o
 lin-x86_64/Interface: Interface/CMakeFiles/Interface.dir/build.make
 lin-x86_64/Interface: libambf_framework.a
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libGL.so
@@ -166,6 +192,9 @@ lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libGLU.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libboost_system.so
+lin-x86_64/Interface: /home/vidur/Desktop/libtorch/lib/libtorch.so
+lin-x86_64/Interface: /home/vidur/Desktop/libtorch/lib/libc10.so
+lin-x86_64/Interface: /home/vidur/Desktop/libtorch/lib/libc10.so
 lin-x86_64/Interface: /opt/ros/melodic/lib/libroslib.so
 lin-x86_64/Interface: /opt/ros/melodic/lib/librospack.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libpython2.7.so
@@ -195,8 +224,9 @@ lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libpthread.so
 lin-x86_64/Interface: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+lin-x86_64/Interface: /home/vidur/Desktop/libtorch/lib/libc10.so
 lin-x86_64/Interface: Interface/CMakeFiles/Interface.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../lin-x86_64/Interface"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vidur/Desktop/ambf/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../lin-x86_64/Interface"
 	cd /home/vidur/Desktop/ambf/bin/Interface && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Interface.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -207,6 +237,7 @@ Interface/CMakeFiles/Interface.dir/build: lin-x86_64/Interface
 Interface/CMakeFiles/Interface.dir/requires: Interface/CMakeFiles/Interface.dir/src/Interface.cpp.o.requires
 Interface/CMakeFiles/Interface.dir/requires: Interface/CMakeFiles/Interface.dir/src/Definitions.cpp.o.requires
 Interface/CMakeFiles/Interface.dir/requires: Interface/CMakeFiles/Interface.dir/src/main.cpp.o.requires
+Interface/CMakeFiles/Interface.dir/requires: Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o.requires
 
 .PHONY : Interface/CMakeFiles/Interface.dir/requires
 

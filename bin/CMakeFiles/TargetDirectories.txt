@@ -156,10 +156,10 @@
 /home/vidur/Desktop/ambf/bin/ambf_controller/CMakeFiles/rebuild_cache.dir
 /home/vidur/Desktop/ambf/bin/ambf_controller/CMakeFiles/install.dir
 /home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/install/strip.dir
-/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/install/local.dir
-/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/test.dir
+/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/install.dir
 /home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/list_install_components.dir
 /home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/Interface.dir
+/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/install/local.dir
+/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/test.dir
 /home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/edit_cache.dir
 /home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/rebuild_cache.dir
-/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/install.dir
