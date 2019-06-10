@@ -39,3 +39,5 @@ const tf::Transform           reference::raven_T_CB           =   tf::Transform(
 
 const vector<unsigned char>   reference::true_joints          = {          1,           1,           1,        1,       1,        1,         1};
 const vector<unsigned char>   reference::false_joints         = {          0,           0,           0,        0,       0,        0,         0};
+const int              reference::EPISODES             = 1000;
+const int              reference::T_steps              = 500;

@@ -1,4 +1,4 @@
-#include "intermain.h"
+#include "Reinforce_tracking.h"
 // #include "chai3d.h"
 // #include "ambf.h"
 // //---------------------------------------------------------------------------
@@ -15,10 +15,11 @@
 // //------------------------------
 
 int main(int argc, char* argv[]){
-  // ros::init(argc, argv, "my_node_nam/e");
+  ros::init(argc, argv, "my_node_name");
 
-  Interface I(argc, argv);
+  Reinforce_tracking r(argc, argv);
+  r.right_arm();
 
-  
+
   return 0;
 }

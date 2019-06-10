@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vidur/Desktop/ambf/Interface/src/Definitions.cpp" "/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/Interface.dir/src/Definitions.cpp.o"
   "/home/vidur/Desktop/ambf/Interface/src/Interface.cpp" "/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/Interface.dir/src/Interface.cpp.o"
+  "/home/vidur/Desktop/ambf/Interface/src/Reinforcement_module.cpp" "/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/Interface.dir/src/Reinforcement_module.cpp.o"
   "/home/vidur/Desktop/ambf/Interface/src/main.cpp" "/home/vidur/Desktop/ambf/bin/Interface/CMakeFiles/Interface.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -15,6 +16,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "AL_ALEXT_PROTOTYPES"
   "AL_BUILD_LIBRARY"
   "AL_LIBTYPE_STATIC"
+  "AT_PARALLEL_OPENMP=1"
   "C_ENABLE_AMBF_COMM_SUPPORT"
   "C_ENABLE_AMBF_DVRK_SUPPORT"
   "GLEW_STATIC"
@@ -23,6 +25,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROS_PACKAGE_NAME=\"AMBF\""
   "USE_X86_64_ASM"
   "_LIB"
+  "_THP_CORE"
   "__THEORA"
   )
 
@@ -58,6 +61,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../external/theoraplayer/external/vorbis/lib"
   "../external/theoraplayer/src/Theora"
   "../Interface/include"
+  "/home/vidur/Desktop/libtorch/include"
+  "/home/vidur/Desktop/libtorch/include/torch/csrc/api/include"
   )
 
 # Targets to which this target links.

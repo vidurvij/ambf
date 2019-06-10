@@ -41,15 +41,16 @@
 # common settings required to build examples
 find_package (GLFW REQUIRED)
 find_package (Boost COMPONENTS program_options filesystem REQUIRED)
+find_package (Torch REQUIRED PATHS /home/vidur/Desktop/libtorch)
 
 include_directories (${GLFW_INCLUDE_DIRS}
                      include )
 
-add_executable (Interface include/Definitions.h include/intermain.h src/Interface.cpp src/Definitions.cpp src/main.cpp)
+add_executable (Interface include/Definitions.h include/Reinforce_tracking.h include/intermain.h src/Interface.cpp src/Definitions.cpp src/main.cpp src/Reinforcement_module.cpp)
 #                               include/Definitions.h
 #                               include/intermain.h
 #                               include/RavenKine.h
 #                               src/Interface.cpp
 #                               src/RobotInfo.cpp
 
-target_link_libraries (Interface ${AMBF_LIBRARIES} ${GLFW_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries (Interface ${AMBF_LIBRARIES} ${GLFW_LIBRARIES} ${Boost_LIBRARIES} ${TORCH_LIBRARIES})
