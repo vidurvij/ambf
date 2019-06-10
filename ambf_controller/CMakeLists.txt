@@ -49,7 +49,7 @@ add_executable (ambf_controller raven2/include/ambf_defines.h
                                 raven2/include/ambf_controller.h
                                 raven2/include/ambf_motion_planner.h
                                 raven2/src/ambf_motion_planner.cpp
-                                raven2/src/ambf_controller.cpp 
+                                raven2/src/ambf_controller.cpp
                                 raven2/src/ambf_defines.cpp
                                 raven2/src/main.cpp )
 

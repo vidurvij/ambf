@@ -319,7 +319,15 @@ endif()
 
 
 # AMBF Interface
-add_subdirectory (${PROJECT_SOURCE_DIR}/Interface)
+
+if (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+  find_package(catkin COMPONENTS
+    roscpp
+  )
+  if (${catkin_FOUND})
+    add_subdirectory (${PROJECT_SOURCE_DIR}/Interface)
+  endif()
+endif()
 
 #
 # export package

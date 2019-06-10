@@ -1,14 +1,11 @@
 #ifndef REINFORCEMENT_H
 #define REINFORCEMENT_H
 
-#include <intermain.h>
+#include "intermain.h"
 #include <torch/torch.h>
 #include <random>
 #include <math.h>
 
-int INPUT = 7;
-int OUTPUT = 16;
-float incr = .0001;
 
 struct policy_network: torch::nn::Module{
   policy_network(int state, int output) {
@@ -53,7 +50,7 @@ struct value_network: torch::nn::Module{
 };
 
 class Reinforce_tracking{
-  static const vector<float> goal; //Replace it within the code
+  static vector<float> goal; //Replace it within the code
   static vector<vector<float>> action_list;
 public:
   float gamma = .9;
@@ -66,16 +63,12 @@ public:
   bool AC2();
   bool right_arm();
   torch::Tensor reward_function(torch::Tensor&);
-  int choice_weighted(torch::Tensor&);
+  int choice_weighted(torch::Tensor);
   void neural_networks(int, int);
   bool end_condition(torch::Tensor&);
   value_network* vnet;
   policy_network* policy;
 };
 
-vector<vector<float>> Reinforce_tracking::action_list = {{incr , 0 , 0}, {0, incr , 0}, {0 , 0 , incr},{-incr , 0 , 0},
-                                                                {0 , -incr , 0},{0 , 0 , -incr},{incr , incr , 0},{-incr , incr , 0},
-                                                                {incr , -incr , 0},{-incr , -incr , 0},{incr , 0 , incr},{-incr , 0 , incr},
-                                                                { 0, incr , incr},{0 , -incr , incr},{incr , 0 , -incr},{-incr , 0 , -incr},
-                                                                {0 , incr , -incr},{.0001 , -incr , -incr}};
+
 #endif

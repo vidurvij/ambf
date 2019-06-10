@@ -74,8 +74,8 @@ while(episode < reference::EPISODES){
 }
 
 void Reinforce_tracking::neural_networks(int input, int output){
-  this -> vnet = new value_network(INPUT);
-  this -> policy = new policy_network(INPUT, OUTPUT);
+  this -> vnet = new value_network(reference::INPUT);
+  this -> policy = new policy_network(reference::INPUT, reference::OUTPUT);
 }
 
 torch::Tensor Reinforce_tracking::to_tensor(vector<float>& a){
@@ -85,16 +85,18 @@ torch::Tensor Reinforce_tracking::to_tensor(vector<float>& a){
   return b;
 }
 
-int Reinforce_tracking::choice_weighted(torch::Tensor& list){
+int Reinforce_tracking::choice_weighted(torch::Tensor list){
   uniform_real_distribution<float> distribution(0.0,1.0);
   default_random_engine generator;
   float sum = 0;
-  for(int i = 0; i < list.size(); i++)
-    sum += lsit[i];
-  distance = distribution(generator) * sum;
+  int size;
+  // at::size(list,size);
+  for(int i = 0; i < list.size(0); i++)
+    sum += *(list[i].data<float>());
+  float distance = distribution(generator) * sum;
   int idx = 0;
-  for(auto i: list){
-    distance -= i;
+  for(int i = 0; i < list.size(0); i++){
+    distance -= *(list[i].data<float>());
     if (distance < 0)
       return idx;
     else
@@ -103,9 +105,9 @@ int Reinforce_tracking::choice_weighted(torch::Tensor& list){
 }
 
 torch::Tensor Reinforce_tracking::reward_function(torch::Tensor& state){
-  float reward;
-  for(int i = 0; i < (int)this -> goal.size(); i++)
-    reward += float(state[i] - goal[i],2);
+  torch::Tensor reward;
+  for(int i = 0; i < (int)goal.size(); i++)
+    reward += pow(state[i] - goal[i],2);
   torch::Tensor r = torch::ones(1);
   r[0] = sqrt(reward);
   return r;
@@ -113,8 +115,18 @@ torch::Tensor Reinforce_tracking::reward_function(torch::Tensor& state){
 
 bool Reinforce_tracking::end_condition(torch::Tensor& state){
   float epsilon = .000001;
-  for(int i = 0; i < goal.size(); i++)
-    if(state[i] - goal[i] > epsilon)
-      return false
+  for(int i = 0; i < goal.size(); i++){
+    if((*(state[i].data<float>()) - goal[i]) > epsilon)
+      return false;
+    }
   return true;
 }
+
+vector<float> Reinforce_tracking::goal = {1,1,1};
+
+
+vector<vector<float>> Reinforce_tracking::action_list = {{reference::incr , 0 , 0}, {0, reference::incr , 0}, {0 , 0 , reference::incr},{-reference::incr , 0 , 0},
+{0 , -reference::incr , 0},{0 , 0 , -reference::incr},{reference::incr , reference::incr , 0},{-reference::incr , reference::incr , 0},
+{reference::incr , -reference::incr , 0},{-reference::incr , -reference::incr , 0},{reference::incr , 0 , reference::incr},{-reference::incr , 0 , reference::incr},
+{ 0, reference::incr , reference::incr},{0 , -reference::incr , reference::incr},{reference::incr , 0 , -reference::incr},{-reference::incr , 0 , -reference::incr},
+{0 , reference::incr , -reference::incr},{.0001 , -reference::incr , -reference::incr}};

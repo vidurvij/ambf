@@ -46,7 +46,7 @@ find_package (Torch REQUIRED PATHS /home/vidur/Desktop/libtorch)
 include_directories (${GLFW_INCLUDE_DIRS}
                      include )
 
-add_executable (Interface include/Definitions.h include/Reinforce_tracking.h include/intermain.h src/Interface.cpp src/Definitions.cpp src/main.cpp src/Reinforcement_module.cpp)
+add_executable (Interface include/Definitions.h include/intermain.h include/Reinforce_tracking.h src/Interface.cpp src/Definitions.cpp src/main.cpp src/Reinforcement_module.cpp)
 #                               include/Definitions.h
 #                               include/intermain.h
 #                               include/RavenKine.h

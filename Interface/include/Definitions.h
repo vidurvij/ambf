@@ -53,6 +53,9 @@ struct reference{
 
   static const int EPISODES;
   static const int T_steps;
+  static const int INPUT;
+  static const int OUTPUT;
+  static const float incr;
 };
 
 struct robot_part{

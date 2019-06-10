@@ -41,3 +41,6 @@ const vector<unsigned char>   reference::true_joints          = {          1,   
 const vector<unsigned char>   reference::false_joints         = {          0,           0,           0,        0,       0,        0,         0};
 const int              reference::EPISODES             = 1000;
 const int              reference::T_steps              = 500;
+const int              reference::INPUT = 7;
+const int              reference::OUTPUT = 16;
+const float            reference::incr = .0001;

@@ -34,7 +34,7 @@ Definitions.h
 
 ../Interface/include/Reinforce_tracking.h
 intermain.h
--
+../Interface/include/intermain.h
 torch/torch.h
 -
 random
