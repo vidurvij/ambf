@@ -60,6 +60,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../external/theoraplayer/external/vorbis/include"
   "../external/theoraplayer/external/vorbis/lib"
   "../external/theoraplayer/src/Theora"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "../Interface/include"
   "/home/vidur/Desktop/libtorch/include"
   "/home/vidur/Desktop/libtorch/include/torch/csrc/api/include"

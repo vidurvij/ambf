@@ -40,11 +40,15 @@
 
 # common settings required to build examples
 find_package (GLFW REQUIRED)
+find_package (catkin REQUIRED COMPONENTS roscpp rosconsole)
 find_package (Boost COMPONENTS program_options filesystem REQUIRED)
 find_package (Torch REQUIRED PATHS /home/vidur/Desktop/libtorch)
+message("******* found " ${Torch_FOUND})
+message("******* found " ${Torch_INCLUDE_DIRS})
+message("******* found " ${TORCH_LIBRARIES})
+message("******* found " ${catkin_LIBRARIES})
 
-include_directories (${GLFW_INCLUDE_DIRS}
-                     include )
+include_directories (${GLFW_INCLUDE_DIRS} ${Torch_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS} include )
 
 add_executable (Interface include/Definitions.h include/intermain.h include/Reinforce_tracking.h src/Interface.cpp src/Definitions.cpp src/main.cpp src/Reinforcement_module.cpp)
 #                               include/Definitions.h
@@ -53,4 +57,4 @@ add_executable (Interface include/Definitions.h include/intermain.h include/Rein
 #                               src/Interface.cpp
 #                               src/RobotInfo.cpp
 
-target_link_libraries (Interface ${AMBF_LIBRARIES} ${GLFW_LIBRARIES} ${Boost_LIBRARIES} ${TORCH_LIBRARIES})
+target_link_libraries (Interface ${AMBF_LIBRARIES} ${GLFW_LIBRARIES} ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${TORCH_LIBRARIES} )
