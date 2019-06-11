@@ -41,7 +41,7 @@
 # common settings required to build examples
 find_package (GLFW REQUIRED)
 find_package (Boost COMPONENTS program_options filesystem REQUIRED)
-find_package (Torch REQUIRED PATHS /home/vidur/Desktop/libtorch)
+#find_package (Torch REQUIRED PATHS /home/vidur/Desktop/libtorch)
 
 include_directories (${GLFW_INCLUDE_DIRS}
                      include )

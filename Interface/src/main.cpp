@@ -1,6 +1,6 @@
 // #include "ros/ros.h"
-// #include "intermain.h"
-#include "Reinforce_tracking.h"
+#include "intermain.h"
+// #include "Reinforce_tracking.h"
 // #include "chai3d.h"
 // #include "ambf.h"
 // //---------------------------------------------------------------------------
@@ -17,7 +17,7 @@
 // //------------------------------
 
 int main(int argc, char* argv[]){
-  // ros::init(argc, argv, "my_node_name");
+  ros::init(argc, argv, "my_node_name");
 
   // Reinforce_tracking r(argc, argv);
   // r.right_arm();
