@@ -41,11 +41,15 @@
 # common settings required to build examples
 find_package (GLFW REQUIRED)
 find_package (Boost COMPONENTS program_options filesystem REQUIRED)
-#find_package (Torch REQUIRED PATHS /home/vidur/Desktop/libtorch)
+find_package (Torch REQUIRED HINTS ~/Desktop/pytorch)
 
 include_directories (${GLFW_INCLUDE_DIRS}
                      include )
 
+include_directories(${Torch_INCLUDE_DIRS})
+message("**** ||| TORCH FOUND " ${Torch_FOUND})
+message("**** ||| TORCH INCLUDES " ${TORCH_INCLUDE_DIRS})
+message("**** ||| TORCH LIBRARIES " ${TORCH_LIBRARIES})
 add_executable (Interface include/Definitions.h include/intermain.h include/Reinforce_tracking.h src/Interface.cpp src/Definitions.cpp src/main.cpp src/Reinforcement_module.cpp)
 #                               include/Definitions.h
 #                               include/intermain.h
